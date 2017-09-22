@@ -34,30 +34,32 @@ BEGIN
 			IF (vRec.OBJECT_NAME NOT IN (
 			
 				-- ########################################################
-				-- ###### OBJECTS NAMED BELOW WILL NOT BE DROPPED WHEN 'ALL'
-				-- ###### IS PASSED AS AN ARGUMENT.
+				-- ###### OBJECTS NAMED BELOW WILL NOT BE DROPPED WHEN 'ALL' IS PASSED AS AN ARGUMENT.
         		-- ######
         		-- ###### ENTRIES MUST BE COMMA DELIMITED
 				-- ###### EXCEPT LAST ENTRY WHICH MUST HAVE NO COMMA
 				
-        'DROP_IF_EXISTS',
+        		'DROP_IF_EXISTS',
 				'IF_EXISTS',
 				'STRIP_CONSTRAINT_NAME',
 				'STRIP_CONSTRAINT',
 				'DOPL',
-        'DWDATE'
-       
+        		'DWDATE'
+				) 
+				-- ends IN collection
+				
+        		-- EXCLUDES OBJECTS WHICH HAVE A COMMON PREFIX / NAMING CONVENTION
+        		And Upper(Vrec.Object_Name) Not Like 'A1M%' -- ASSIGNMENT 1 MARKING SCRIPT
+        		And Upper(Vrec.Object_Name) Not Like 'A2%'  -- ASSIGNMENT 2 MARKING SCRIPT
+        		And Upper(Vrec.Object_Name) Not Like 'MS%'   
+        		
 				-- ###### DO NOT ALTER CODE BELOW THIS POINT
 				-- ########################################################
+				-- ########################################################
+				-- ########################################################
 				
-				 	) -- ends IN collection
-				And Upper(Vrec.Object_Type) <> 'INDEX'
-        
-        -- EXCLUDES ALL MARKING SCRIPT FUNCTIONS
-        And Upper(Vrec.Object_Name) Not Like 'A1M%'
-        And Upper(Vrec.Object_Name) Not Like 'A2%'
-        And Upper(Vrec.Object_Name) Not Like 'MS%'   
-        AND UPPER(VREC.OBJECT_NAME) NOT LIKE 'BIN%'
+				AND UPPER(VREC.OBJECT_NAME) NOT LIKE 'BIN%' -- SYSTEM OBJECTS - DO NOT REMOVE
+				And Upper(Vrec.Object_Type) <> 'INDEX' -- SYSTEM OBJECTS - DO NOT REMOVE 
 				
 				) THEN
 		
