@@ -2,7 +2,9 @@
 PLSQL Core Library - a couple of procedures / functions to make life easier in PLSQL
 
 #################################
+
 CONTENTS
+
 #################################
 
 1.	WARRANTY AND SUPPORT
@@ -11,7 +13,9 @@ CONTENTS
 
 
 #################################
+
 1.	WARRANTY & SUPPORT
+
 #################################
 
 This work / library is offered without warranty either express of implied.
@@ -24,7 +28,9 @@ Support is not provided.
 
 
 #################################
+
 2.	INSTALLATION INSTRUCTIONS
+
 #################################
 
 The library comes with an installation script called INSTALLER.sql 
@@ -42,7 +48,9 @@ as it will lose its reference to its place in the file system and not function c
 Once it is open in your IDE run the script and it will install the core library procedures and functions to your database.
 
 #################################
+
 3.	INCLUDED PROCEDURES / FUNCTIONS
+
 #################################
 
 IF_EXISTS	FUNCTION 	PROVIDES A MEANS TO CHECK IF A DATABASE OBJECT OF A PARTICULAR NAME, TYPE AND OR OWNER EXISTS
