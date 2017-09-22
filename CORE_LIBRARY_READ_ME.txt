@@ -1,6 +1,6 @@
-# plsql_core_library
-PLSQL Core Library - a couple of procedures / functions to make life easier in PLSQL
-
+#################################
+PL/SQL CORE LIBRARY
+#################################
 
 #################################
 WARRANTY & SUPPORT
@@ -32,3 +32,8 @@ DO NOT open the installer script, and copy paste the script from a text editor i
 as it will lose its reference to its place in the file system and not function correctly.
 
 Once it is open in your IDE run the script and it will install the core library procedures and functions to your database.
+
+
+
+
+
